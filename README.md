@@ -4,7 +4,7 @@ OsloMet brukernavn:
 
 GitHub brukernavn: oytel
 
-GitHub repo URL: https://github.com/oytel/obligData1700
+GitHub repo URL: https://github.com/oytel/Oblig1-Data1700-oytel7902.git
 
 Fullt navn: Øyvind Telle
 
