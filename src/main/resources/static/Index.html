@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="inn">Navn</label>
+<!-- en input-box trenger en label ellers feilmelding i IntelliJ-->
+<input type="text" onchange="visNavn()" id="inn"/>
+<button onclick="visMelding()">Vis melding</button>
+<div id="navn">ut</div>
+<div id="melding">ut</div>
+
+<script type="application/javascript">
+
+    function visMelding(){
+        document.getElementById("melding").innerHTML = "<h2>Hallo!</h2>";
+        console.log("Inne i visMelding()");
+    }
+
+    function visNavn(){
+        let navnet = document.getElementById("inn").value;
+        document.getElementById("navn").innerText = navnet;
+        alert("Navnet er "+navnet);
+    }
+</script>
+</body>
+</html>
