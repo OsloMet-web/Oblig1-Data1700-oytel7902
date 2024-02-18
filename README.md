@@ -10,3 +10,10 @@ Fullt navn: Øyvind Telle
 
 Kort beskrivelse av applikasjon:
 
+Bestilling av kinobiletter. 
+Gir feil hvis du legger inn:
+- navn som starter på tall
+- antall som ikke er tall
+- ikke velger kino
+- skriver inn feil telefonnummer eller epost.
+- Man kan slette alle bilettene
