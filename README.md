@@ -1,6 +1,6 @@
 # Oblig 1 Data1700
 
-OsloMet brukernavn:
+OsloMet brukernavn: oytel7902
 
 GitHub brukernavn: oytel
 
