@@ -2,28 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Kinobilett</title>
+    <style>
+        div.one{
+            border-style: solid;
+            border-width: 2px;
+            border-color: blue;
+            width: 25%;
+        }
+    </style>
+    <script src="index.js"></script>
 </head>
 <body>
-<label for="inn">Navn</label>
-<!-- en input-box trenger en label ellers feilmelding i IntelliJ-->
-<input type="text" onchange="visNavn()" id="inn"/>
-<button onclick="visMelding()">Vis melding</button>
-<div id="navn">ut</div>
-<div id="melding">ut</div>
+<div class="one">
+    <h1><b>Bestilling av kinobiletter</b></h1>
+    Velg film:
+    <select id="velgF">
+        <option value="">Velg film her</option>
+        <option value="Frost">Frost</option>
+        <option value="Die Hard">Die Hard</option>
+        <option value="Frost 2">Frost 2</option>
+    </select><span id="resultat5"></span>
+    <br/>
+    <br/>
+    <table>
+        <tr>
+            <td>Antal</td>
+            <td><input style="width: 15px" type="text" id="antall" onchange="checkNumber();"/></td>
+            <td><span id="resultat"></span><br/></td>
+        </tr>
+    </table>
+    <br/>
 
-<script type="application/javascript">
-
-    function visMelding(){
-        document.getElementById("melding").innerHTML = "<h2>Hallo!</h2>";
-        console.log("Inne i visMelding()");
-    }
-
-    function visNavn(){
-        let navnet = document.getElementById("inn").value;
-        document.getElementById("navn").innerText = navnet;
-        alert("Navnet er "+navnet);
-    }
-</script>
+    <table>
+        <tr>
+            <td style="width: 50px">Fornavn</td>
+            <td style="width: 50px"><input type="text" id="fornavn" onchange="validateName1();"/></td>
+            <td style="width: 2000px"><span id="resultat1"></span></td>
+        </tr>
+        <tr>
+            <td style="width: 50px">Etternavn</td>
+            <td style="width: 50px"><input type="text" id="etternavn" onchange="validateName2();"/></td>
+            <td style="width: 200px"><span id="resultat2"></span></td>
+        </tr>
+        <tr>
+            <td style="width: 50px">Telefonnr</td>
+            <td style="width: 50px"><input type="text" id="telefon" onchange="validatePhone();"/></td>
+            <td style="width: 200px"><span id="resultat3"></span></td>
+        </tr>
+        <tr>
+            <td style="width: 50px">Epost</td>
+            <td style="width: 50px"><input type="text" id="mail" onchange="validateEmail();"/></td>
+            <td style="width: 200px"><span id="resultat4"></span></td>
+        </tr>
+    </table>
+    <br/>
+    <button onclick="registrerKjop();">Kjøp billett</button>
+    <br/>
+    <br/>
+    <h2><b>Alle billetter</b></h2>
+    <span id="alleBestillinger"></span>
+    <br/>
+    <button onclick="slett();">Slett alle billettene</button>
+    <br/>
+    <br/>
+</div>
 </body>
 </html>
