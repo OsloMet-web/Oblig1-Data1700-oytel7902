@@ -9,9 +9,12 @@ function checkNumber(){
 }
 const bestillingArray = [];
 
-//Found the way to validate e-mails on https://dev.to/iamcymentho/mastering-email-address-validation-in-javascript-4f0j
+/*Found the way to validate e-mails on https://dev.to/iamcymentho/mastering-email-address-validation-in-javascript-4f0j
+and followed the same pattern for name and phone. These tests doesn't validate Norwegian letters æ, ø and å..
+ */
 const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+[a-zA-Z]{2,4}$/;
-const namePattern = /[a-åA-Å]/;
+const namePattern = /^[a-zA-Z]{2,30}$/;
+const phonePattern = /^[0-9]{8}$/;
 function validateEmail(){
     document.getElementById("resultat4").innerHTML = "";
     let email = document.getElementById("mail").value;
@@ -39,7 +42,7 @@ function validatePhone(){
     document.getElementById("resultat3").innerHTML = "";
     let teleS = document.getElementById("telefon").value;
     let tele = Number(teleS);
-    if(isNaN(tele) || teleS.length!==8) {
+    if(phonePattern.test(tele)===false) {
     document.getElementById("resultat3").innerHTML = "<b style='color: red'>Ugyldig telefonnummer</b>";
     }
 }
